@@ -1,0 +1,120 @@
+{
+  "$ref": "#/definitions/Style",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "FunctionExpression": {
+      "anyOf": [
+        {
+          "items": {
+            "const": "zoom",
+            "type": "string"
+          },
+          "maxItems": 1,
+          "minItems": 1,
+          "type": "array"
+        },
+        {
+          "items": [
+            {
+              "const": "let",
+              "type": "string"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "anyOf": [
+                {
+                  "type": ["string", "number", "boolean"]
+                },
+                {
+                  "$ref": "#/definitions/FunctionExpression"
+                }
+              ]
+            },
+            {
+              "anyOf": [
+                {
+                  "type": ["string", "number", "boolean"]
+                },
+                {
+                  "$ref": "#/definitions/FunctionExpression"
+                }
+              ]
+            }
+          ],
+          "maxItems": 4,
+          "minItems": 4,
+          "type": "array"
+        },
+        {
+          "items": [
+            {
+              "const": "var",
+              "type": "string"
+            },
+            {
+              "type": "string"
+            }
+          ],
+          "maxItems": 2,
+          "minItems": 2,
+          "type": "array"
+        }
+      ]
+    },
+    "Layer": {
+      "$ref": "#/definitions/LineLayer"
+    },
+    "LineLayer": {
+      "additionalProperties": false,
+      "properties": {
+        "paint": {
+          "additionalProperties": false,
+          "properties": {
+            "line-color": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "$ref": "#/definitions/FunctionExpression"
+                }
+              ]
+            },
+            "line-width": {
+              "anyOf": [
+                {
+                  "type": "number"
+                },
+                {
+                  "$ref": "#/definitions/FunctionExpression"
+                }
+              ]
+            }
+          },
+          "required": ["line-color", "line-width"],
+          "type": "object"
+        }
+      },
+      "required": ["paint"],
+      "type": "object"
+    },
+    "Style": {
+      "additionalProperties": false,
+      "properties": {
+        "$schema": {
+          "type": "string"
+        },
+        "layers": {
+          "items": {
+            "$ref": "#/definitions/Layer"
+          },
+          "type": "array"
+        }
+      },
+      "required": ["layers"],
+      "type": "object"
+    }
+  }
+}

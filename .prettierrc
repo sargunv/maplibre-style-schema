@@ -1,0 +1,8 @@
+{
+  "htmlWhitespaceSensitivity": "ignore",
+  "proseWrap": "always",
+  "quoteProps": "consistent",
+  "semi": true,
+  "tabWidth": 2,
+  "trailingComma": "all"
+}

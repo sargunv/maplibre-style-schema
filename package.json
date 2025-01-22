@@ -1,0 +1,13 @@
+{
+  "name": "maplibre-style-schema",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "generate": "ts-json-schema-generator --path 'src/**/*.ts' --type 'Style' --out 'schema.json'"
+  },
+  "devDependencies": {
+    "prettier": "^3.4.2",
+    "ts-json-schema-generator": "^2.3.0",
+    "typescript": "^5.7.3"
+  }
+}
