@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "generate": "ts-json-schema-generator --path 'src/**/*.ts' --type 'Style' --out 'schema.json'"
+    "generate": "ts-json-schema-generator --path 'src/**/*.ts' --type 'Style' --out 'schema.json'",
+    "prettify": "prettier --write schema.json"
   },
   "devDependencies": {
     "prettier": "^3.4.2",

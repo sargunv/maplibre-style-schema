@@ -19,7 +19,7 @@ jobs:
         with:
           node-version: "lts/*"
 
-      - run: npm install && npm run generate
+      - run: npm install && npm run generate && npm run prettify
 
       - name: Check for uncommitted changes
         run: git diff --exit-code
