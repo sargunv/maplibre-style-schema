@@ -1,4 +1,3 @@
-import type { LineLayer } from './line-layer'
+import type { LineLayer } from "./line-layer";
 
-export type Layer = LineLayer
-
+export type Layer = LineLayer;

@@ -1,6 +1,6 @@
-import type { Layer } from './layer'
+import type { Layer } from "./layer";
 
 export interface Style {
-  "$schema"?: string
-  layers: Layer[]
+  $schema?: string;
+  layers: Layer[];
 }
